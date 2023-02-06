@@ -4,9 +4,10 @@ import http from "@/services/http";
 export const useAuthStore = defineStore("auth", {
   state: () => {
     return {
-      name: JSON.parse(sessionStorage.getItem("user")).name || null,
-      email: JSON.parse(sessionStorage.getItem("user")).email || null,
-      token: JSON.parse(sessionStorage.getItem("user")).token || null,
+      id: null,
+      name: "",
+      email: "",
+      token: null,
     };
   },
 
@@ -20,24 +21,35 @@ export const useAuthStore = defineStore("auth", {
       sessionStorage.setItem(
         "user",
         JSON.stringify({
+          id: response.data.data.Id,
           name: response.data.data.Name,
           email: this.email,
           token: response.data.data.Token,
         })
       );
 
-      console.log(response);
       return response;
     },
 
     async register() {
       if (this.password !== this.confirm_password) return false;
 
-      return await http.post("/api/AuthAccount/Register", {
+      const response = await http.post("/api/AuthAccount/Register", {
         name: this.name,
         email: this.email,
         password: this.password,
       });
+
+      this.name = "";
+      this.email = "";
+      this.password = "";
+      this.confirm_password = "";
+
+      return response;
+    },
+
+    async logout() {
+      sessionStorage.removeItem("user");
     },
   },
 });
