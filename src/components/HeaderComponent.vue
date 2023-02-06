@@ -1,3 +1,24 @@
+<script setup>
+import { useAuthStore } from "@/stores/auth";
+import { useRouter } from "vue-router";
+
+const navigation = [
+  // { name: "Solutions", href: "#" },
+  // { name: "Pricing", href: "#" },
+  // { name: "Docs", href: "#" },
+  // { name: "Company", href: "#" },
+];
+
+const router = useRouter();
+const authStore = useAuthStore();
+
+const logout = async () => {
+  await authStore.logout();
+
+  router.push({ name: "login" });
+};
+</script>
+
 <template>
   <header class="bg-indigo-600">
     <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Top">
@@ -30,8 +51,8 @@
             >Sign in</a
           > -->
           <a
-            href="#"
-            class="inline-block rounded-md border border-transparent bg-white py-2 px-4 text-base font-medium text-indigo-600 hover:bg-indigo-50"
+            @click="logout"
+            class="inline-block cursor-pointer rounded-md border border-transparent bg-white py-2 px-4 text-base font-medium text-indigo-600 hover:bg-indigo-50"
             >Sign out</a
           >
         </div>
@@ -48,12 +69,3 @@
     </nav>
   </header>
 </template>
-
-<script setup>
-const navigation = [
-  // { name: "Solutions", href: "#" },
-  // { name: "Pricing", href: "#" },
-  // { name: "Docs", href: "#" },
-  // { name: "Company", href: "#" },
-];
-</script>
