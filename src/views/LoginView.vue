@@ -7,7 +7,6 @@ const authStore = useAuthStore();
 
 const login = async () => {
   const response = await authStore.login();
-  console.log(response);
 
   if (response.status == 200) {
     router.push({ name: "home" });
