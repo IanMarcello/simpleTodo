@@ -49,7 +49,7 @@ export const useAuthStore = defineStore("auth", {
     },
 
     async logout() {
-      sessionStorage.removeItem("user");
+      sessionStorage.clear();
     },
   },
 });

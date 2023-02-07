@@ -23,6 +23,22 @@ export const useTodoStore = defineStore("todo", {
 
       return filteredList;
     },
+
+    allCompleted: (state) => {
+      const allCompleted = state.tasks.filter((todo) => {
+        return todo.completed === true;
+      });
+
+      return allCompleted;
+    },
+
+    notCompleted: (state) => {
+      const notCompleted = state.tasks.filter((todo) => {
+        return todo.completed === false;
+      });
+
+      return notCompleted;
+    },
   },
   actions: {
     async fetchData() {
@@ -33,25 +49,10 @@ export const useTodoStore = defineStore("todo", {
     },
 
     async addTodo() {
-      var count = parseInt(JSON.parse(sessionStorage.getItem("count")).count);
-
-      if (count == 0) {
-        this.count++;
-      } else if (count > 0) {
-        this.count = count;
-      } else if (count < 0) {
-        window.alert("Unexpected error when fetching data");
-      }
-
-      console.log(JSON.parse(sessionStorage.getItem("user")).id);
-      console.log(count);
-      console.log(this.title);
-
       const response = await http.post(
         "https://jsonplaceholder.typicode.com/todos",
         {
           userId: JSON.parse(sessionStorage.getItem("user")).id,
-          // id: this.count++,
           title: this.title,
           completed: false,
         }
@@ -59,7 +60,6 @@ export const useTodoStore = defineStore("todo", {
 
       this.tasks.push({
         userId: response.data.userId,
-        // id: this.count,
         title: this.title,
         completed: response.data.completed,
       });
