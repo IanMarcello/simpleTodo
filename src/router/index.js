@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import LoginView from "@/views/LoginView.vue";
 import RegisterView from "@/views/RegisterView.vue";
 import HomeView from "@/views/HomeView.vue";
+import TodoView from "@/views/TodoView.vue";
 
 function guardRoute(to, from, next) {
   var isAuthenticated = false;
@@ -37,6 +38,11 @@ const router = createRouter({
       name: "home",
       component: HomeView,
       beforeEnter: guardRoute,
+    },
+    {
+      path: "/todo",
+      name: "todo",
+      component: TodoView,
     },
   ],
 });
