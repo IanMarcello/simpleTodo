@@ -13,10 +13,10 @@ const logout = async () => {
 </script>
 
 <template>
-  <header class="bg-indigo-600">
+  <header class="bg-indigo-600 ml-60">
     <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Top">
       <div
-        class="flex flex-row w-full justify-between border-b border-indigo-500 py-6 lg:border-none"
+        class="flex flex-row w-full justify-between border-b border-indigo-500 py-3 lg:border-none"
       >
         <div>
           <router-link :to="{ name: 'home' }">

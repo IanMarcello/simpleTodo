@@ -1,7 +1,8 @@
 <template>
-  <footer class="bg-white sticky top-[100vh]">
+  <footer class="border-t-2 bg-white ml-60 sticky top-[100vh]">
     <div
-      class="mx-auto max-w-7xl py-12 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8"
+      class="mx-auto max-w-7xl py-4 px-4 mt-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8"
+      aria-label="Footer"
     >
       <div class="flex justify-center space-x-6 md:order-2">
         <a

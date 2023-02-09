@@ -1,53 +1,72 @@
 <template>
-  <div
-    class="flex flex-row overflow-y-auto border-r border-gray-200 bg-white pt-5 pb-4"
+  <button
+    data-drawer-target="default-sidebar"
+    data-drawer-toggle="default-sidebar"
+    aria-controls="default-sidebar"
+    type="button"
+    class="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:focus:ring-gray-600"
   >
-    <div class="mt-5 flex flex-grow flex-row">
-      <nav class="flex-1 space-y-1 bg-white" aria-label="Sidebar">
+    <span class="sr-only">Open sidebar</span>
+    <svg
+      class="w-6 h-6"
+      aria-hidden="true"
+      fill="currentColor"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        clip-rule="evenodd"
+        fill-rule="evenodd"
+        d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
+      ></path>
+    </svg>
+  </button>
+
+  <aside
+    class="absolute left-0 w-60 h-screen top-0 transition-transform -translate-x-full md:translate-x-0 scrollbar-thin scrollbar-thumb-blue-700 scrollbar-track-blue-300 scrollbar-thumb-rounded-full scrollbar-track-rounded-full"
+  >
+    <div
+      class="flex flex-col w-full h-full overflow-y-hidden pt-8 bg-white border-r dark:bg-gray-900 dark:border-gray-700"
+    >
+      <nav class="mb-5">
         <a
-          v-for="item in navigation"
-          :key="item.name"
-          :href="item.href"
-          :class="[
-            item.current
-              ? 'bg-indigo-50 border-indigo-600 text-indigo-600'
-              : 'border-transparent text-gray-600 hover:bg-gray-50 hover:text-gray-900',
-            'group flex items-center px-3 py-2 text-sm font-medium border-l-4',
-          ]"
+          class="flex items-center px-4 py-2 text-gray-700 bg-gray-100 dark:bg-gray-800 dark:text-gray-200"
+          href="#"
         >
-          <component
-            :is="item.icon"
-            :class="[
-              item.current
-                ? 'text-indigo-500'
-                : 'text-gray-400 group-hover:text-gray-500',
-              'mr-3 flex-shrink-0 h-6 w-6',
-            ]"
-            aria-hidden="true"
-          />
-          {{ item.name }}
+          <span class="material-symbols-outlined"> home </span>
+
+          <span class="mx-4 font-medium">Dashboard</span>
+        </a>
+
+        <a
+          class="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-300 transform dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700"
+          href="#"
+        >
+          <span class="material-symbols-outlined"> task </span>
+
+          <span class="mx-4 font-medium">Task</span>
+        </a>
+
+        <a
+          class="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-300 transform dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700"
+          href="#"
+        >
+          <span class="material-symbols-outlined"> person </span>
+
+          <span class="mx-4 font-medium">Profile</span>
+        </a>
+
+        <a
+          class="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-300 transform dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700"
+          href="#"
+        >
+          <span class="material-symbols-outlined"> settings </span>
+
+          <span class="mx-4 font-medium">Settings</span>
         </a>
       </nav>
     </div>
-  </div>
+  </aside>
 </template>
 
-<script setup>
-import {
-  CalendarIcon,
-  ChartBarIcon,
-  FolderIcon,
-  HomeIcon,
-  InboxIcon,
-  UsersIcon,
-} from "@heroicons/vue/24/outline";
-
-const navigation = [
-  { name: "Dashboard", icon: HomeIcon, href: "#", current: true },
-  { name: "Team", icon: UsersIcon, href: "#", current: false },
-  { name: "Projects", icon: FolderIcon, href: "#", current: false },
-  { name: "Calendar", icon: CalendarIcon, href: "#", current: false },
-  { name: "Documents", icon: InboxIcon, href: "#", current: false },
-  { name: "Reports", icon: ChartBarIcon, href: "#", current: false },
-];
-</script>
+<script setup></script>
