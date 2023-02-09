@@ -3,6 +3,7 @@ import LoginView from "@/views/LoginView.vue";
 import RegisterView from "@/views/RegisterView.vue";
 import HomeView from "@/views/HomeView.vue";
 import TodoView from "@/views/TodoView.vue";
+import LandingView from "@/views/LandingView.vue";
 
 function guardRoute(to, from, next) {
   var isAuthenticated = false;
@@ -24,6 +25,11 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
+      path: "/",
+      name: "landing",
+      component: LandingView,
+    },
+    {
       path: "/login",
       name: "login",
       component: LoginView,
@@ -34,7 +40,7 @@ const router = createRouter({
       component: RegisterView,
     },
     {
-      path: "/",
+      path: "/home",
       name: "home",
       component: HomeView,
       beforeEnter: guardRoute,
