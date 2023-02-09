@@ -17,7 +17,7 @@ const register = async () => {
 <template>
   <div class="flex min-h-full flex-col justify-center py-6 sm:px-6 lg:px-8">
     <div class="sm:mx-auto sm:w-full sm:max-w-md">
-      <router-link :to="{}">
+      <router-link :to="{ name: 'landing' }">
         <img
           class="mx-auto h-12 w-auto"
           src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
@@ -27,15 +27,15 @@ const register = async () => {
       <h2
         class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900"
       >
-        Sign Up
+        Register
       </h2>
       <p class="mt-2 text-center text-sm text-gray-600">
-        Or
+        Or if you already have an account,
         {{ " " }}
         <router-link
           :to="{ name: 'login' }"
           class="font-medium text-indigo-600 hover:text-indigo-500"
-          >if you already have an account, Sign In</router-link
+          >Log In</router-link
         >
       </p>
     </div>
