@@ -5,6 +5,8 @@ import { useRouter } from "vue-router";
 const router = useRouter();
 const authStore = useAuthStore();
 
+const user = JSON.parse(sessionStorage.getItem("user"));
+
 const logout = async () => {
   await authStore.logout();
 
@@ -13,8 +15,8 @@ const logout = async () => {
 </script>
 
 <template>
-  <header class="bg-indigo-600 ml-60">
-    <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Top">
+  <header class="bg-indigo-600 p-2">
+    <nav class="mx-auto w-full px-4 sm:px-6 lg:px-8" aria-label="Top">
       <div
         class="flex flex-row w-full justify-between border-b border-indigo-500 py-3 lg:border-none"
       >
@@ -28,9 +30,10 @@ const logout = async () => {
             />
           </router-link>
         </div>
-        <div class="flex flex-row gap-x-5">
+        <div class="flex flex-row gap-x-5 md:gap-x-2">
           <div>
             <span
+              v-if="!(typeof user === undefined || user === null)"
               class="inline-block h-10 w-10 overflow-hidden rounded-full bg-gray-100"
             >
               <svg
@@ -45,10 +48,27 @@ const logout = async () => {
             </span>
           </div>
           <div>
+            <router-link
+              :to="{ name: 'login' }"
+              v-if="typeof user === undefined || user === null"
+              class="inline-block cursor-pointer rounded-md border border-transparent bg-white py-2 px-3 sm:px-4 text-base font-medium text-indigo-600 hover:bg-indigo-50"
+              >Log in</router-link
+            >
+          </div>
+          <div>
+            <router-link
+              :to="{ name: 'register' }"
+              v-if="typeof user === undefined || user === null"
+              class="inline-block cursor-pointer rounded-md border border-transparent bg-white py-2 px-3 sm:px-4 text-base font-medium text-indigo-600 hover:bg-indigo-50"
+              >Register</router-link
+            >
+          </div>
+          <div>
             <a
+              v-if="!(typeof user === undefined || user === null)"
               @click="logout"
-              class="inline-block cursor-pointer rounded-md border border-transparent bg-white py-2 px-4 text-base font-medium text-indigo-600 hover:bg-indigo-50"
-              >Sign out</a
+              class="inline-block cursor-pointer rounded-md border border-transparent bg-white py-2 px-3 sm:px-4 text-base font-medium text-indigo-600 hover:bg-indigo-50"
+              >Log out</a
             >
           </div>
         </div>
