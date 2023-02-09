@@ -14,13 +14,6 @@ export const useTodoStore = defineStore("todo", {
         return todo.userId === JSON.parse(sessionStorage.getItem("user")).id;
       });
 
-      sessionStorage.setItem(
-        "count",
-        JSON.stringify({
-          count: filteredList.length ? filteredList.length : 0,
-        })
-      );
-
       return filteredList;
     },
 
@@ -40,6 +33,7 @@ export const useTodoStore = defineStore("todo", {
       return notCompleted;
     },
   },
+
   actions: {
     async fetchData() {
       return await http
@@ -63,6 +57,8 @@ export const useTodoStore = defineStore("todo", {
         title: this.title,
         completed: response.data.completed,
       });
+
+      this.title = "";
 
       console.log(response);
       return response;
