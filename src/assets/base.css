@@ -4,3 +4,8 @@ span, a {
     -webkit-user-select: none;
     -ms-user-select: none;
 }
+
+textarea {
+    resize: none;
+    overflow-y: scroll;
+}
