@@ -28,6 +28,9 @@ export const useAuthStore = defineStore("auth", {
         })
       );
 
+      this.email = "";
+      this.password = "";
+
       return response;
     },
 
