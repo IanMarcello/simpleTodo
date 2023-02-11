@@ -15,11 +15,9 @@ const logout = async () => {
 </script>
 
 <template>
-  <header class="bg-indigo-600 p-2">
+  <header class="bg-gradient-to-r from-gold-800 to-indigo-800 p-2">
     <nav class="mx-auto w-full px-4 sm:px-6 lg:px-8" aria-label="Top">
-      <div
-        class="flex flex-row w-full justify-between border-b border-indigo-500 py-3 lg:border-none"
-      >
+      <div class="flex flex-row w-full justify-between py-3">
         <div>
           <router-link :to="{ name: 'home' }">
             <span class="sr-only">Your Company</span>

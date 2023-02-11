@@ -1,11 +1,17 @@
 <script setup>
 import { useAuthStore } from "@/stores/auth";
 import { useRouter } from "vue-router";
+import { ref } from "vue";
 
 const router = useRouter();
 const authStore = useAuthStore();
 
 const user = JSON.parse(sessionStorage.getItem("user"));
+const show = ref(false);
+
+function toggleShow() {
+  show.value = !show.value;
+}
 
 const logout = async () => {
   await authStore.logout();
@@ -15,40 +21,31 @@ const logout = async () => {
 </script>
 
 <template>
-  <!-- <button
-    data-drawer-target="default-sidebar"
-    data-drawer-toggle="default-sidebar"
-    aria-controls="default-sidebar"
-    type="button"
-    class="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:focus:ring-gray-600"
+  <a
+    @click="toggleShow"
+    class="inline-flex order-first p-1 sm:hidden bg-gradient-to-b to-gold-800 from-indigo-800 items-start"
   >
-    <span class="sr-only">Open sidebar</span>
-    <svg
-      class="w-6 h-6"
-      aria-hidden="true"
-      fill="currentColor"
-      viewBox="0 0 20 20"
-      xmlns="http://www.w3.org/2000/svg"
+    <span
+      class="material-symbols-outlined text-white p-2 rounded-lg hover:bg-indigo-800"
     >
-      <path
-        clip-rule="evenodd"
-        fill-rule="evenodd"
-        d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
-      ></path>
-    </svg>
-  </button> -->
+      menu
+    </span>
+  </a>
 
-  <nav class="order-first bg-indigo-600 px-2 max-h-screen">
+  <nav
+    class="order-first bg-gradient-to-b from-gold-800 to-indigo-800 px-2 transition-transform -translate-x-full sm:-translate-y-0 sm:translate-x-0"
+    :class="show ? 'translate-x-0 -translate-y-1' : '-translate-x-full'"
+  >
     <div class="h-full flex flex-col justify-between px-3 py-4">
       <div
-        class="overflow-y-auto scrollbar-thin scrollbar-track-blue-300 scrollbar-thumb-blue-800 bg-indigo-600"
+        class="overflow-y-auto scrollbar-thin scrollbar-track-blue-300 scrollbar-thumb-blue-800"
       >
         <ul class="space-y-2">
           <li>
             <router-link
               :to="{ name: '' }"
               v-if="!(typeof user === undefined || user === null)"
-              class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-indigo-700"
+              class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-gradient-to-r hover:from-gold-800 hover:to-indigo-900"
             >
               <span class="material-symbols-outlined"> home </span>
               <span class="ml-3">Dashboard</span>
@@ -58,7 +55,7 @@ const logout = async () => {
             <router-link
               :to="{ name: '' }"
               v-if="typeof user === undefined || user === null"
-              class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-indigo-700"
+              class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-gradient-to-r hover:from-gold-800 hover:to-indigo-900"
             >
               <span class="material-symbols-outlined"> home </span>
               <span class="ml-3">Home</span>
@@ -68,7 +65,7 @@ const logout = async () => {
             <router-link
               :to="{ name: '' }"
               v-if="!(typeof user === undefined || user === null)"
-              class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-indigo-700"
+              class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-gradient-to-r hover:from-gold-800 hover:to-indigo-900"
             >
               <span class="material-symbols-outlined"> draft </span>
               <span class="ml-3">Task</span>
@@ -78,7 +75,7 @@ const logout = async () => {
             <router-link
               :to="{ name: '' }"
               v-if="!(typeof user === undefined || user === null)"
-              class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-indigo-700"
+              class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-gradient-to-r hover:from-gold-800 hover:to-indigo-900"
             >
               <span class="material-symbols-outlined"> task </span>
               <span class="ml-3">Completed Tasks</span>
@@ -88,7 +85,7 @@ const logout = async () => {
             <router-link
               :to="{ name: '' }"
               v-if="!(typeof user === undefined || user === null)"
-              class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-indigo-700"
+              class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-gradient-to-r hover:from-gold-800 hover:to-indigo-900"
             >
               <span class="material-symbols-outlined"> fast_forward </span>
               <span class="ml-3">Ongoing Tasks</span>
@@ -104,7 +101,7 @@ const logout = async () => {
             <router-link
               :to="{ name: 'register' }"
               v-if="typeof user === undefined || user === null"
-              class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-indigo-700"
+              class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-gradient-to-r hover:from-indigo-600 hover:to-indigo-900"
             >
               <span class="material-symbols-outlined"> app_registration </span>
               <span class="ml-3">Register</span>
@@ -114,7 +111,7 @@ const logout = async () => {
             <router-link
               :to="{ name: 'login' }"
               v-if="typeof user === undefined || user === null"
-              class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-indigo-700"
+              class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-gradient-to-r hover:from-indigo-600 hover:to-indigo-900"
             >
               <span class="material-symbols-outlined"> login </span>
               <span class="ml-3">Login</span>
@@ -122,14 +119,14 @@ const logout = async () => {
           </li>
 
           <li>
-            <button
+            <a
               @click="logout"
               v-if="!(typeof user === undefined || user === null)"
-              class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-indigo-700"
+              class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-gradient-to-r hover:from-indigo-600 hover:to-indigo-900"
             >
               <span class="material-symbols-outlined"> logout </span>
               <span class="ml-3">Logout</span>
-            </button>
+            </a>
           </li>
         </ul>
       </div>

@@ -74,7 +74,7 @@ const navigation = [
 </script>
 
 <template>
-  <footer class="bg-indigo-200">
+  <footer class="bg-indigo-800">
     <div
       class="mx-auto max-w-7xl py-2 px-4 mt-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8"
     >
