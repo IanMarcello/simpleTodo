@@ -19,7 +19,10 @@ export const useTodoStore = defineStore("todo", {
 
     allCompleted: (state) => {
       const allCompleted = state.tasks.filter((todo) => {
-        return todo.completed === true;
+        return (
+          todo.completed === true &&
+          todo.UserId === JSON.parse(sessionStorage.getItem("user")).id
+        );
       });
 
       return allCompleted;
@@ -27,7 +30,10 @@ export const useTodoStore = defineStore("todo", {
 
     notCompleted: (state) => {
       const notCompleted = state.tasks.filter((todo) => {
-        return todo.completed === false;
+        return (
+          todo.completed === false &&
+          todo.UserId === JSON.parse(sessionStorage.getItem("user")).id
+        );
       });
 
       return notCompleted;
