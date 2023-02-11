@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 import LoginView from "@/views/LoginView.vue";
 import RegisterView from "@/views/RegisterView.vue";
-import HomeView from "@/views/HomeView.vue";
+import UserView from "@/views/UserView.vue";
+import GuestView from "@/views/GuestView.vue";
 import TodoView from "@/views/TodoView.vue";
 import LandingView from "@/views/LandingView.vue";
 
@@ -26,8 +27,26 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      name: "landing",
       component: LandingView,
+      children: [
+        {
+          path: "/",
+          name: "home",
+          component: GuestView,
+        },
+        {
+          path: "/dashboard",
+          name: "dashboard",
+          component: UserView,
+          beforeEnter: guardRoute,
+        },
+        {
+          path: "/todo",
+          name: "todo",
+          component: TodoView,
+          beforeEnter: guardRoute,
+        },
+      ],
     },
     {
       path: "/login",
@@ -38,17 +57,6 @@ const router = createRouter({
       path: "/register",
       name: "register",
       component: RegisterView,
-    },
-    {
-      path: "/home",
-      name: "home",
-      component: HomeView,
-      beforeEnter: guardRoute,
-    },
-    {
-      path: "/todo",
-      name: "todo",
-      component: TodoView,
     },
   ],
 });
