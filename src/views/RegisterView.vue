@@ -7,7 +7,6 @@ const authStore = useAuthStore();
 
 const register = async () => {
   const response = await authStore.register();
-  console.log(response);
   if (response.status == 201 || response.status == 200) {
     router.push({ name: "login" });
   }
@@ -17,7 +16,7 @@ const register = async () => {
 <template>
   <div class="flex min-h-full flex-col justify-center py-6 sm:px-6 lg:px-8">
     <div class="sm:mx-auto sm:w-full sm:max-w-md">
-      <router-link :to="{ name: 'landing' }">
+      <router-link :to="{ name: 'home' }">
         <img
           class="mx-auto h-12 w-auto"
           src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"

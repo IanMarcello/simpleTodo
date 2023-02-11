@@ -17,7 +17,7 @@ const login = async () => {
 <template>
   <div class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
     <div class="sm:mx-auto sm:w-full sm:max-w-md">
-      <router-link :to="{ name: 'landing' }"
+      <router-link :to="{ name: 'home' }"
         ><img
           class="mx-auto h-12 w-auto"
           src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
