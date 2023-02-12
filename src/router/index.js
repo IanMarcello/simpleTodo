@@ -5,6 +5,8 @@ import UserView from "@/views/UserView.vue";
 import GuestView from "@/views/GuestView.vue";
 import TodoView from "@/views/TodoView.vue";
 import LandingView from "@/views/LandingView.vue";
+import CompletedTodoView from "@/views/CompletedTodoView.vue";
+import OngoingTodoView from "@/views/OngoingTodoView.vue";
 
 function guardRoute(to, from, next) {
   var isAuthenticated = false;
@@ -44,6 +46,18 @@ const router = createRouter({
           path: "/todo",
           name: "todo",
           component: TodoView,
+          beforeEnter: guardRoute,
+        },
+        {
+          path: "/completedTasks",
+          name: "completedTasks",
+          component: CompletedTodoView,
+          beforeEnter: guardRoute,
+        },
+        {
+          path: "/ongoingTasks",
+          name: "ongoingTasks",
+          component: OngoingTodoView,
           beforeEnter: guardRoute,
         },
       ],
