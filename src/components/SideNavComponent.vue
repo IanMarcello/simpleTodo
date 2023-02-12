@@ -63,17 +63,17 @@ const logout = async () => {
           </li>
           <li>
             <router-link
-              :to="{ name: '' }"
+              :to="{ name: 'todo' }"
               v-if="!(typeof user === undefined || user === null)"
               class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-gradient-to-r hover:from-gold-800 hover:to-indigo-900"
             >
               <span class="material-symbols-outlined"> draft </span>
-              <span class="ml-3">Task</span>
+              <span class="ml-3">Tasks</span>
             </router-link>
           </li>
           <li>
             <router-link
-              :to="{ name: '' }"
+              :to="{ name: 'completedTasks' }"
               v-if="!(typeof user === undefined || user === null)"
               class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-gradient-to-r hover:from-gold-800 hover:to-indigo-900"
             >
@@ -83,7 +83,7 @@ const logout = async () => {
           </li>
           <li>
             <router-link
-              :to="{ name: '' }"
+              :to="{ name: 'ongoingTasks' }"
               v-if="!(typeof user === undefined || user === null)"
               class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-gradient-to-r hover:from-gold-800 hover:to-indigo-900"
             >
