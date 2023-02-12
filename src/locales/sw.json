@@ -1,6 +1,23 @@
 {
-    "title": "Mambo Ya Kufanya",
-    "header": {
-        "name": "Kufanya"
-    }
+  "email_address": "",
+  "password": "",
+  "english": "Kiingereza",
+  "swahili": "Kiswahili",
+  "full_name": "",
+  "confirm_password": "",
+  "login": "",
+  "log_in": "",
+  "logout": "",
+  "register": "",
+  "home": "",
+  "dashboard": "",
+  "tasks": "",
+  "completed_tasks": "",
+  "ongoing_tasks": "",
+  "remember_me": "",
+  "continue_with": "",
+  "forgot_password": "",
+  "login_account": "",
+  "no_account": "",
+  "have_account": ""
 }
