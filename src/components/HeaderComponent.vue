@@ -1,6 +1,7 @@
 <script setup>
 import { useAuthStore } from "@/stores/auth";
 import { useRouter } from "vue-router";
+import LocaleComponent from "@/components/LocaleComponent.vue";
 
 const router = useRouter();
 const authStore = useAuthStore();
@@ -28,7 +29,10 @@ const logout = async () => {
             />
           </router-link>
         </div>
-        <div class="flex flex-row gap-x-5 md:gap-x-2">
+        <div class="flex flex-row gap-x-1 md:gap-x-2">
+          <div class="px-2">
+            <LocaleComponent />
+          </div>
           <div>
             <span
               v-if="!(typeof user === undefined || user === null)"
