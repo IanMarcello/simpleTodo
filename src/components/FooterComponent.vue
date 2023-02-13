@@ -91,7 +91,7 @@ const navigation = [
       </div>
       <div class="mt-8 md:order-1 md:mt-0">
         <p class="text-center text-base text-gray-400">
-          &copy; 2023 Your Company, Inc. All rights reserved.
+          &copy; 2023 Your Company, Inc. {{ $t("rights_reserved") }}.
         </p>
       </div>
     </div>

@@ -54,7 +54,7 @@ const logout = async () => {
               :to="{ name: 'login' }"
               v-if="typeof user === undefined || user === null"
               class="inline-block cursor-pointer rounded-md border border-transparent bg-white py-2 px-3 sm:px-4 text-base font-medium text-indigo-600 hover:bg-indigo-50"
-              >Log in</router-link
+              >{{ $t("log_in") }}</router-link
             >
           </div>
           <div>
@@ -62,7 +62,7 @@ const logout = async () => {
               :to="{ name: 'register' }"
               v-if="typeof user === undefined || user === null"
               class="inline-block cursor-pointer rounded-md border border-transparent bg-white py-2 px-3 sm:px-4 text-base font-medium text-indigo-600 hover:bg-indigo-50"
-              >Register</router-link
+              >{{ $t("register") }}</router-link
             >
           </div>
           <div>
@@ -70,7 +70,7 @@ const logout = async () => {
               v-if="!(typeof user === undefined || user === null)"
               @click="logout"
               class="inline-block cursor-pointer rounded-md border border-transparent bg-white py-2 px-3 sm:px-4 text-base font-medium text-indigo-600 hover:bg-indigo-50"
-              >Log out</a
+              >{{ $t("logout") }}</a
             >
           </div>
         </div>

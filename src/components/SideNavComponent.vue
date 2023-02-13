@@ -48,7 +48,7 @@ const logout = async () => {
               class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-gradient-to-r hover:from-gold-800 hover:to-indigo-900"
             >
               <span class="material-symbols-outlined"> home </span>
-              <span class="ml-3">Dashboard</span>
+              <span class="ml-3">{{ $t("dashboard") }}</span>
             </router-link>
           </li>
           <li>
@@ -58,7 +58,7 @@ const logout = async () => {
               class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-gradient-to-r hover:from-gold-800 hover:to-indigo-900"
             >
               <span class="material-symbols-outlined"> home </span>
-              <span class="ml-3">Home</span>
+              <span class="ml-3">{{ $t("home") }}</span>
             </router-link>
           </li>
           <li>
@@ -68,7 +68,7 @@ const logout = async () => {
               class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-gradient-to-r hover:from-gold-800 hover:to-indigo-900"
             >
               <span class="material-symbols-outlined"> draft </span>
-              <span class="ml-3">Tasks</span>
+              <span class="ml-3">{{ $t("tasks") }}</span>
             </router-link>
           </li>
           <li>
@@ -78,7 +78,7 @@ const logout = async () => {
               class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-gradient-to-r hover:from-gold-800 hover:to-indigo-900"
             >
               <span class="material-symbols-outlined"> task </span>
-              <span class="ml-3">Completed Tasks</span>
+              <span class="ml-3">{{ $t("completed_tasks") }}</span>
             </router-link>
           </li>
           <li>
@@ -88,7 +88,7 @@ const logout = async () => {
               class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-gradient-to-r hover:from-gold-800 hover:to-indigo-900"
             >
               <span class="material-symbols-outlined"> fast_forward </span>
-              <span class="ml-3">Ongoing Tasks</span>
+              <span class="ml-3">{{ $t("ongoing_tasks") }}</span>
             </router-link>
           </li>
         </ul>
@@ -104,7 +104,7 @@ const logout = async () => {
               class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-gradient-to-r hover:from-indigo-600 hover:to-indigo-900"
             >
               <span class="material-symbols-outlined"> app_registration </span>
-              <span class="ml-3">Register</span>
+              <span class="ml-3">{{ $t("register") }}</span>
             </router-link>
           </li>
           <li>
@@ -114,7 +114,7 @@ const logout = async () => {
               class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-gradient-to-r hover:from-indigo-600 hover:to-indigo-900"
             >
               <span class="material-symbols-outlined"> login </span>
-              <span class="ml-3">Login</span>
+              <span class="ml-3">{{ $t("login") }}</span>
             </router-link>
           </li>
 
@@ -125,7 +125,7 @@ const logout = async () => {
               class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-gradient-to-r hover:from-indigo-600 hover:to-indigo-900"
             >
               <span class="material-symbols-outlined"> logout </span>
-              <span class="ml-3">Logout</span>
+              <span class="ml-3">{{ $t("logout") }}</span>
             </a>
           </li>
         </ul>
