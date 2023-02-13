@@ -26,7 +26,7 @@ const register = async () => {
       <h2
         class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900"
       >
-        Register
+        {{ $t("register") }}
       </h2>
       <p class="mt-2 text-center text-sm text-gray-600">
         Or if you already have an account,
@@ -34,7 +34,7 @@ const register = async () => {
         <router-link
           :to="{ name: 'login' }"
           class="font-medium text-indigo-600 hover:text-indigo-500"
-          >Log In</router-link
+          >{{ $t("Log In") }}</router-link
         >
       </p>
     </div>
@@ -43,9 +43,9 @@ const register = async () => {
       <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
         <form class="space-y-6" @submit.prevent="register">
           <div>
-            <label for="name" class="block text-sm font-medium text-gray-700"
-              >Full Name</label
-            >
+            <label for="name" class="block text-sm font-medium text-gray-700">{{
+              $t("full_name")
+            }}</label>
             <div class="mt-1">
               <input
                 id="name"
@@ -58,8 +58,10 @@ const register = async () => {
           </div>
 
           <div>
-            <label for="email" class="block text-sm font-medium text-gray-700"
-              >Email address</label
+            <label
+              for="email"
+              class="block text-sm font-medium text-gray-700"
+              >{{ $t("email_address") }}</label
             >
             <div class="mt-1">
               <input
@@ -77,7 +79,7 @@ const register = async () => {
             <label
               for="password"
               class="block text-sm font-medium text-gray-700"
-              >Password</label
+              >{{ $t("password") }}</label
             >
             <div class="mt-1">
               <input
@@ -95,7 +97,7 @@ const register = async () => {
             <label
               for="confirm_password"
               class="block text-sm font-medium text-gray-700"
-              >Confirm Password</label
+              >{{ $t("confirm_password") }}</label
             >
             <div class="mt-1">
               <input
@@ -113,7 +115,7 @@ const register = async () => {
               type="submit"
               class="flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
             >
-              Register
+              {{ $t("register") }}
             </button>
           </div>
         </form>
@@ -124,7 +126,9 @@ const register = async () => {
               <div class="w-full border-t border-gray-300" />
             </div>
             <div class="relative flex justify-center text-sm">
-              <span class="bg-white px-2 text-gray-500">Or register with</span>
+              <span class="bg-white px-2 text-gray-500">{{
+                $t("register_with")
+              }}</span>
             </div>
           </div>
 
