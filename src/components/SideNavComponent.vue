@@ -23,7 +23,7 @@ const logout = async () => {
 <template>
   <a
     @click="toggleShow"
-    class="inline-flex order-first p-1 sm:hidden bg-gradient-to-b to-gold-800 from-indigo-800 items-start"
+    class="inline-flex order-first p-1 sm:hidden bg-gradient-to-b to-slate-900 from-indigo-800 items-start"
   >
     <span
       class="material-symbols-outlined text-white p-2 rounded-lg hover:bg-indigo-800"
@@ -33,7 +33,7 @@ const logout = async () => {
   </a>
 
   <nav
-    class="order-first bg-gradient-to-b from-gold-800 to-indigo-800 px-2 transition-transform -translate-x-full sm:-translate-y-0 sm:translate-x-0"
+    class="order-first bg-gradient-to-b from-slate-900 to-indigo-800 px-2 transition-transform -translate-x-full sm:-translate-y-0 sm:translate-x-0"
     :class="show ? 'translate-x-0 -translate-y-1' : '-translate-x-full'"
   >
     <div class="h-full flex flex-col justify-between px-3 py-4">
@@ -45,7 +45,7 @@ const logout = async () => {
             <router-link
               :to="{ name: '' }"
               v-if="!(typeof user === undefined || user === null)"
-              class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-gradient-to-r hover:from-gold-800 hover:to-indigo-900"
+              class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-gradient-to-r hover:from-slate-900 hover:to-indigo-900"
             >
               <span class="material-symbols-outlined"> home </span>
               <span class="ml-3">{{ $t("dashboard") }}</span>
@@ -55,7 +55,7 @@ const logout = async () => {
             <router-link
               :to="{ name: '' }"
               v-if="typeof user === undefined || user === null"
-              class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-gradient-to-r hover:from-gold-800 hover:to-indigo-900"
+              class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-gradient-to-r hover:from-slate-900 hover:to-indigo-900"
             >
               <span class="material-symbols-outlined"> home </span>
               <span class="ml-3">{{ $t("home") }}</span>
@@ -65,7 +65,7 @@ const logout = async () => {
             <router-link
               :to="{ name: 'todo' }"
               v-if="!(typeof user === undefined || user === null)"
-              class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-gradient-to-r hover:from-gold-800 hover:to-indigo-900"
+              class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-gradient-to-r hover:from-slate-900 hover:to-indigo-900"
             >
               <span class="material-symbols-outlined"> draft </span>
               <span class="ml-3">{{ $t("tasks") }}</span>
@@ -75,7 +75,7 @@ const logout = async () => {
             <router-link
               :to="{ name: 'completedTasks' }"
               v-if="!(typeof user === undefined || user === null)"
-              class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-gradient-to-r hover:from-gold-800 hover:to-indigo-900"
+              class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-gradient-to-r hover:from-slate-900 hover:to-indigo-900"
             >
               <span class="material-symbols-outlined"> task </span>
               <span class="ml-3">{{ $t("completed_tasks") }}</span>
@@ -85,7 +85,7 @@ const logout = async () => {
             <router-link
               :to="{ name: 'ongoingTasks' }"
               v-if="!(typeof user === undefined || user === null)"
-              class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-gradient-to-r hover:from-gold-800 hover:to-indigo-900"
+              class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-gradient-to-r hover:from-slate-900 hover:to-indigo-900"
             >
               <span class="material-symbols-outlined"> fast_forward </span>
               <span class="ml-3">{{ $t("ongoing_tasks") }}</span>

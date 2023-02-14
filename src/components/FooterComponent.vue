@@ -76,21 +76,21 @@ const navigation = [
 <template>
   <footer class="bg-indigo-800">
     <div
-      class="mx-auto max-w-7xl py-2 px-4 mt-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8"
+      class="mx-auto max-w-7xl py-2 px-4 my-3 sm:px-6 md:flex md:items-center md:justify-between lg:px-8"
     >
       <div class="flex justify-center space-x-6 md:order-2">
         <a
           v-for="item in navigation"
           :key="item.name"
           :href="item.href"
-          class="text-gray-400 hover:text-gray-500"
+          class="text-white hover:text-gray-200"
         >
           <span class="sr-only">{{ item.name }}</span>
           <component :is="item.icon" class="h-6 w-6" aria-hidden="true" />
         </a>
       </div>
       <div class="mt-8 md:order-1 md:mt-0">
-        <p class="text-center text-base text-gray-400">
+        <p class="text-center text-base text-white">
           &copy; 2023 Your Company, Inc. {{ $t("rights_reserved") }}.
         </p>
       </div>

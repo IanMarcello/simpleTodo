@@ -1,11 +1,12 @@
-span, a {
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
+span,
+a {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 textarea {
-    resize: none;
-    overflow-y: scroll;
+  resize: none;
+  overflow-y: scroll;
 }

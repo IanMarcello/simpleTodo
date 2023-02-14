@@ -16,7 +16,7 @@ const logout = async () => {
 </script>
 
 <template>
-  <header class="bg-gradient-to-r from-gold-800 to-indigo-800 p-2">
+  <header class="bg-gradient-to-r from-slate-900 to-indigo-800 p-2">
     <nav class="mx-auto w-full px-4 sm:px-6 lg:px-8" aria-label="Top">
       <div class="flex flex-row w-full justify-between py-3">
         <div>
