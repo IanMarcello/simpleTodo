@@ -10,8 +10,8 @@ import "@/assets/main.css";
 
 const i18n = createI18n({
   legacy: false,
-  locale: "sw",
-  fallbackLocale: "en",
+  locale: "en",
+  fallbackLocale: "sw",
   messages,
 });
 
