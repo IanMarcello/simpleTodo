@@ -22,7 +22,8 @@ const toDoStore = useTodoStore();
                 To Do List
               </h3>
               <p class="mt-1 text-sm text-gray-500">
-                You have {{ toDoStore.allCompleted.length }} completed tasks.
+                {{ $t("you_have") }} {{ toDoStore.allCompleted.length }}
+                {{ $t("completed_task") }}.
               </p>
             </div>
           </div>
