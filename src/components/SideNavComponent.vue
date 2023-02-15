@@ -43,7 +43,7 @@ const logout = async () => {
         <ul class="space-y-2">
           <li>
             <router-link
-              :to="{ name: '' }"
+              :to="{ name: 'dashboard' }"
               v-if="!(typeof user === undefined || user === null)"
               class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-gradient-to-r hover:from-slate-900 hover:to-indigo-900"
             >
