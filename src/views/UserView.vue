@@ -1,9 +1,9 @@
 <script setup>
-import { useI18n } from "vue-i18n";
+// import { useI18n } from "vue-i18n";
 
 const user = JSON.parse(sessionStorage.getItem("user")).name;
 
-const { t } = useI18n();
+// const { t } = useI18n();
 </script>
 
 <template>
