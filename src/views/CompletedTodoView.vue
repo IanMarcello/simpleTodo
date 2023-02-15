@@ -19,11 +19,11 @@ const toDoStore = useTodoStore();
           >
             <div class="ml-4 mt-4">
               <h3 class="text-lg font-medium leading-6 text-gray-900">
-                To Do List
+                {{ $t("completed_tasks") }}
               </h3>
               <p class="mt-1 text-sm text-gray-500">
                 {{ $t("you_have") }} {{ toDoStore.allCompleted.length }}
-                {{ $t("completed_task") }}.
+                {{ $t("completed") }}.
               </p>
             </div>
           </div>

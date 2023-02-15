@@ -27,15 +27,15 @@ const login = async () => {
       <h2
         class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900"
       >
-        Log in to your account
+        {{ $t("login_account") }}
       </h2>
       <p class="mt-2 text-center text-sm text-gray-600">
-        Or if you don't have an account,
+        {{ $t("no_account") }},
         {{ " " }}
         <router-link
           :to="{ name: 'register' }"
           class="font-medium text-indigo-600 hover:text-indigo-500"
-          >Register</router-link
+          >{{ $t("register") }}</router-link
         >
       </p>
     </div>
@@ -44,8 +44,10 @@ const login = async () => {
       <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
         <form class="space-y-6" @submit.prevent="login">
           <div>
-            <label for="email" class="block text-sm font-medium text-gray-700"
-              >Email address</label
+            <label
+              for="email"
+              class="block text-sm font-medium text-gray-700"
+              >{{ $t("email_address") }}</label
             >
             <div class="mt-1">
               <input
@@ -64,7 +66,7 @@ const login = async () => {
             <label
               for="password"
               class="block text-sm font-medium text-gray-700"
-              >Password</label
+              >{{ $t("password") }}</label
             >
             <div class="mt-1">
               <input
@@ -87,8 +89,10 @@ const login = async () => {
                 type="checkbox"
                 class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
               />
-              <label for="remember-me" class="ml-2 block text-sm text-gray-900"
-                >Remember me</label
+              <label
+                for="remember-me"
+                class="ml-2 block text-sm text-gray-900"
+                >{{ $t("remember_me") }}</label
               >
             </div>
 
@@ -96,7 +100,7 @@ const login = async () => {
               <router-link
                 :to="{}"
                 class="font-medium text-indigo-600 hover:text-indigo-500"
-                >Forgot your password?</router-link
+                >{{ $t("forgot_password") }}?</router-link
               >
             </div>
           </div>
@@ -106,7 +110,7 @@ const login = async () => {
               type="submit"
               class="flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
             >
-              Login
+              {{ $t("login") }}
             </button>
           </div>
         </form>
@@ -117,7 +121,9 @@ const login = async () => {
               <div class="w-full border-t border-gray-300" />
             </div>
             <div class="relative flex justify-center text-sm">
-              <span class="bg-white px-2 text-gray-500">Or continue with</span>
+              <span class="bg-white px-2 text-gray-500">{{
+                $t("continue_with")
+              }}</span>
             </div>
           </div>
 

@@ -1,3 +1,5 @@
+<script setup></script>
+
 <template>
   <main class="flex flex-1 px-2 -mt-44 sm:-mt-0 items-center justify-center">
     <h1

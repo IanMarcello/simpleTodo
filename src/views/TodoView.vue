@@ -34,14 +34,13 @@ const addTodo = async () => await toDoStore.addTodo();
           >
             <div class="ml-4 mt-4">
               <h3 class="text-lg font-medium leading-6 text-gray-900">
-                To Do List
+                {{ $t("to_do_list") }}
               </h3>
               <p class="mt-1 text-sm text-gray-500">
-                You have {{ toDoStore.filteredList.length }} tasks. ({{
-                  toDoStore.allCompleted.length
-                }}
-                completed and {{ toDoStore.notCompleted.length }} not
-                completed).
+                {{ $t("you_have") }} {{ toDoStore.filteredList.length
+                }}{{ $t("task") }}. ({{ toDoStore.allCompleted.length }}
+                {{ $t("completed") }} {{ $t("and") }}
+                {{ toDoStore.notCompleted.length }} {{ $t("ongoing") }}).
               </p>
             </div>
             <div class="ml-4 mt-4 flex-shrink-0">
@@ -50,7 +49,7 @@ const addTodo = async () => await toDoStore.addTodo();
                 type="button"
                 class="relative inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
               >
-                Create new task
+                {{ $t("create_task") }}
               </button>
             </div>
           </div>
@@ -133,7 +132,7 @@ const addTodo = async () => await toDoStore.addTodo();
                     <DialogTitle
                       as="h3"
                       class="text-lg font-medium leading-6 text-gray-900"
-                      >Add New Task</DialogTitle
+                      >{{ $t("add_task") }}</DialogTitle
                     >
                     <div class="block w-96 mt-2">
                       <textarea
@@ -158,7 +157,7 @@ const addTodo = async () => await toDoStore.addTodo();
                     open = false;
                   "
                 >
-                  Submit
+                  {{ $t("submit") }}
                 </button>
                 <button
                   type="button"
@@ -166,7 +165,7 @@ const addTodo = async () => await toDoStore.addTodo();
                   @click="open = false"
                   ref="cancelButtonRef"
                 >
-                  Cancel
+                  {{ $t("cancel") }}
                 </button>
               </div>
             </DialogPanel>
